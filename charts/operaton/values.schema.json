@@ -414,14 +414,14 @@
       "type": "object",
       "properties": {
         "fsGroup": {
-          "type": "integer"
+          "type": [
+            "integer",
+            "null"
+          ]
         }
-      },
-      "required": [
-        "fsGroup"
-      ]
+      }
     },
-"securityContext": {
+    "securityContext": {
       "type": "object",
       "properties": {
         "capabilities": {
@@ -435,23 +435,18 @@
                 }
               ]
             }
-          },
-          "required": [
-            "drop"
-          ]
+          }
         },
         "runAsNonRoot": {
           "type": "boolean"
         },
         "runAsUser": {
-          "type": "integer"
+          "type": [
+            "integer",
+            "null"
+          ]
         }
-      },
-      "required": [
-        "capabilities",
-        "runAsNonRoot",
-        "runAsUser"
-      ]
+      }
     },
     "resources": {
       "type": "object",
